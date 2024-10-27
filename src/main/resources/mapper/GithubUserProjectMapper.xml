@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sean.GitRank.mapper.GithubUserProjectMapper">
+
+    <resultMap id="BaseResultMap" type="com.sean.GitRank.model.dto.GithubUserProject">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="node_id" column="node_id" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="full_name" column="full_name" jdbcType="VARCHAR"/>
+            <result property="privated" column="privated" jdbcType="TINYINT"/>
+            <result property="github_user_id" column="github_user_id" jdbcType="BIGINT"/>
+            <result property="html_url" column="html_url" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="fork" column="fork" jdbcType="TINYINT"/>
+            <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="forks_url" column="forks_url" jdbcType="VARCHAR"/>
+            <result property="keys_url" column="keys_url" jdbcType="INTEGER"/>
+            <result property="collaborators_url" column="collaborators_url" jdbcType="VARCHAR"/>
+            <result property="teams_url" column="teams_url" jdbcType="VARCHAR"/>
+            <result property="hooks_url" column="hooks_url" jdbcType="VARCHAR"/>
+            <result property="issue_events_url" column="issue_events_url" jdbcType="VARCHAR"/>
+            <result property="events_url" column="events_url" jdbcType="VARCHAR"/>
+            <result property="branches_url" column="branches_url" jdbcType="VARCHAR"/>
+            <result property="tags_url" column="tags_url" jdbcType="VARCHAR"/>
+            <result property="blobs_url" column="blobs_url" jdbcType="VARCHAR"/>
+            <result property="git_tags_url" column="git_tags_url" jdbcType="VARCHAR"/>
+            <result property="git_refs_url" column="git_refs_url" jdbcType="VARCHAR"/>
+            <result property="trees_url" column="trees_url" jdbcType="VARCHAR"/>
+            <result property="statuses_url" column="statuses_url" jdbcType="VARCHAR"/>
+            <result property="languages_url" column="languages_url" jdbcType="VARCHAR"/>
+            <result property="stargazers_url" column="stargazers_url" jdbcType="VARCHAR"/>
+            <result property="contributors_url" column="contributors_url" jdbcType="VARCHAR"/>
+            <result property="subscribers_url" column="subscribers_url" jdbcType="VARCHAR"/>
+            <result property="subscription_url" column="subscription_url" jdbcType="VARCHAR"/>
+            <result property="commits_url" column="commits_url" jdbcType="VARCHAR"/>
+            <result property="git_commits_url" column="git_commits_url" jdbcType="VARCHAR"/>
+            <result property="comments_url" column="comments_url" jdbcType="VARCHAR"/>
+            <result property="issue_comment_url" column="issue_comment_url" jdbcType="VARCHAR"/>
+            <result property="contents_url" column="contents_url" jdbcType="VARCHAR"/>
+            <result property="compare_url" column="compare_url" jdbcType="VARCHAR"/>
+            <result property="merges_url" column="merges_url" jdbcType="VARCHAR"/>
+            <result property="archive_url" column="archive_url" jdbcType="VARCHAR"/>
+            <result property="downloads_url" column="downloads_url" jdbcType="VARCHAR"/>
+            <result property="issues_url" column="issues_url" jdbcType="VARCHAR"/>
+            <result property="pulls_url" column="pulls_url" jdbcType="VARCHAR"/>
+            <result property="milestones_url" column="milestones_url" jdbcType="VARCHAR"/>
+            <result property="notifications_url" column="notifications_url" jdbcType="VARCHAR"/>
+            <result property="labels_url" column="labels_url" jdbcType="VARCHAR"/>
+            <result property="releases_url" column="releases_url" jdbcType="VARCHAR"/>
+            <result property="deployments_url" column="deployments_url" jdbcType="VARCHAR"/>
+            <result property="created_at" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="updated_at" column="updated_at" jdbcType="TIMESTAMP"/>
+            <result property="pushed_at" column="pushed_at" jdbcType="TIMESTAMP"/>
+            <result property="git_url" column="git_url" jdbcType="VARCHAR"/>
+            <result property="ssh_url" column="ssh_url" jdbcType="VARCHAR"/>
+            <result property="clone_url" column="clone_url" jdbcType="VARCHAR"/>
+            <result property="svn_url" column="svn_url" jdbcType="VARCHAR"/>
+            <result property="homepage" column="homepage" jdbcType="VARCHAR"/>
+            <result property="size" column="size" jdbcType="INTEGER"/>
+            <result property="stargazers_count" column="stargazers_count" jdbcType="INTEGER"/>
+            <result property="watchers_count" column="watchers_count" jdbcType="INTEGER"/>
+            <result property="language" column="language" jdbcType="VARCHAR"/>
+            <result property="has_issues" column="has_issues" jdbcType="TINYINT"/>
+            <result property="has_projects" column="has_projects" jdbcType="TINYINT"/>
+            <result property="has_downloads" column="has_downloads" jdbcType="TINYINT"/>
+            <result property="has_wiki" column="has_wiki" jdbcType="TINYINT"/>
+            <result property="has_pages" column="has_pages" jdbcType="TINYINT"/>
+            <result property="has_discussions" column="has_discussions" jdbcType="TINYINT"/>
+            <result property="forks_count" column="forks_count" jdbcType="INTEGER"/>
+            <result property="mirror_url" column="mirror_url" jdbcType="INTEGER"/>
+            <result property="archived" column="archived" jdbcType="INTEGER"/>
+            <result property="disabled" column="disabled" jdbcType="INTEGER"/>
+            <result property="open_issues_count" column="open_issues_count" jdbcType="INTEGER"/>
+            <result property="license" column="license" jdbcType="VARCHAR"/>
+            <result property="allow_forking" column="allow_forking" jdbcType="INTEGER"/>
+            <result property="is_template" column="is_template" jdbcType="TINYINT"/>
+            <result property="web_commit_signoff_required" column="web_commit_signoff_required" jdbcType="TINYINT"/>
+            <result property="topics" column="topics" jdbcType="VARCHAR"/>
+            <result property="visibility" column="visibility" jdbcType="VARCHAR"/>
+            <result property="forks" column="forks" jdbcType="INTEGER"/>
+            <result property="open_issues" column="open_issues" jdbcType="INTEGER"/>
+            <result property="watchers" column="watchers" jdbcType="INTEGER"/>
+            <result property="default_branch" column="default_branch" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,node_id,name,
+        full_name,privated,github_user_id,
+        html_url,description,fork,
+        url,forks_url,keys_url,
+        collaborators_url,teams_url,hooks_url,
+        issue_events_url,events_url,branches_url,
+        tags_url,blobs_url,git_tags_url,
+        git_refs_url,trees_url,statuses_url,
+        languages_url,stargazers_url,contributors_url,
+        subscribers_url,subscription_url,commits_url,
+        git_commits_url,comments_url,issue_comment_url,
+        contents_url,compare_url,merges_url,
+        archive_url,downloads_url,issues_url,
+        pulls_url,milestones_url,notifications_url,
+        labels_url,releases_url,deployments_url,
+        created_at,updated_at,pushed_at,
+        git_url,ssh_url,clone_url,
+        svn_url,homepage,size,
+        stargazers_count,watchers_count,language,
+        has_issues,has_projects,has_downloads,
+        has_wiki,has_pages,has_discussions,
+        forks_count,mirror_url,archived,
+        disabled,open_issues_count,license,
+        allow_forking,is_template,web_commit_signoff_required,
+        topics,visibility,forks,
+        open_issues,watchers,default_branch
+    </sql>
+</mapper>
